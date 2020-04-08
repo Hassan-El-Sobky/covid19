@@ -1,0 +1,54 @@
+body
+{
+    font-family: 'segoe ui light';
+}
+.table
+{
+    text-align: center;
+}
+.search-box
+{
+    width: 300px;
+ 
+    position: fixed;
+    top: 200px;
+    left: 0;
+    height: 100px;
+}
+.search-box i 
+{
+    
+    padding: 10px;
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid black;
+}
+.table-dark td, .table-dark th, .table-dark thead th {
+     border: inset;
+}
+.search-input 
+{
+    background-color: 343a40;
+    border: 1px solid #95999c;
+    padding: 10px 20px;
+}
+
+.search-input label
+{
+    color: white;
+    
+}
+.nfont
+{
+    font-family: 'Merriweather', serif;
+}
+.headd h1
+{
+text-transform: uppercase;
+font-weight: 900;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.headd span
+{
+    color: red;
+}
