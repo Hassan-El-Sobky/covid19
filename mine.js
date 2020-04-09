@@ -14,7 +14,7 @@ let wData=[];
                    {
                    
                           wData=JSON.parse(xRequest.response);
-                           console.log(wData);
+                         
                                
                    }
     
@@ -63,7 +63,7 @@ xRequest.onreadystatechange=function(){
                {
                
                       cData=JSON.parse(xRequest.response);
-                      console.log(cData);
+                   
                      display();
                }
 
@@ -129,3 +129,75 @@ $('.search-icon i').click(function(){
     $('.search-box').animate({left:'0px'},1000)
   }
 })
+
+
+let eData=[]
+
+
+
+
+let eRequest=new XMLHttpRequest();
+
+eRequest.open("GET",'https://corona.lmao.ninja/countries/egypt')
+eRequest.send()
+
+eRequest.onreadystatechange=function(){
+              
+               if(eRequest.status ==200 && eRequest.readyState == 4)
+               {
+               
+                      eData=JSON.parse(eRequest.response);
+                 
+                      
+                     
+               }
+
+
+
+
+
+
+
+let usData=[];
+let usRequest=new XMLHttpRequest();
+usRequest.open("GET",'https://corona.lmao.ninja/countries/us')
+usRequest.send()
+usRequest.onreadystatechange=function(){
+              
+               if(usRequest.status ==200 && usRequest.readyState == 4)
+               {
+               
+                      usData=JSON.parse(usRequest.response);
+                
+                      
+                     
+               }
+/*---------- Charts---------- */
+
+google.charts.load('current', {'packages':['bar']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+    ['Country', 'Recoverd', 'Deaths', 'TodayCases'],
+    ['Egypt', eData.recovered, eData.deaths,eData.todayCases],
+    ['US',  cData[0].recovered, cData[0].deaths,cData[0].todayCases],
+    ['Spain', cData[1].recovered, cData[1].deaths,cData[1].todayCases],
+    ['Italy', cData[2].recovered, cData[2].deaths,cData[2].todayCases],
+  ]);
+
+  var options = {
+    chart: {
+      title: 'Covid',
+      
+    }
+  };
+
+  var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+  chart.draw(data, google.charts.Bar.convertOptions(options));
+}
+}
+}
+
+
