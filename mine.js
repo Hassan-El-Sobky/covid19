@@ -172,6 +172,37 @@ usRequest.onreadystatechange=function(){
                       
                      
                }
+
+
+let spData=[];
+let spRequest=new XMLHttpRequest();
+spRequest.open("GET",'https://corona.lmao.ninja/countries/spain')
+spRequest.send()
+spRequest.onreadystatechange=function(){
+              
+              if(spRequest.status ==200 && spRequest.readyState == 4)
+              {
+              
+                      spData=JSON.parse(spRequest.response);
+                    
+                      
+                    
+              }
+
+let iData=[];
+let iRequest=new XMLHttpRequest();
+iRequest.open("GET",'https://corona.lmao.ninja/countries/italy')
+iRequest.send()
+iRequest.onreadystatechange=function(){
+              
+              if(iRequest.status ==200 && iRequest.readyState == 4)
+              {
+              
+                      iData=JSON.parse(iRequest.response);
+                    
+                      
+                    
+              }                            
 /*---------- Charts---------- */
 
 google.charts.load('current', {'packages':['bar']});
@@ -181,9 +212,9 @@ function drawChart() {
   var data = google.visualization.arrayToDataTable([
     ['Country', 'Recoverd', 'Deaths', 'TodayCases'],
     ['Egypt', eData.recovered, eData.deaths,eData.todayCases],
-    ['US',  cData[0].recovered, cData[0].deaths,cData[0].todayCases],
-    ['Spain', cData[1].recovered, cData[1].deaths,cData[1].todayCases],
-    ['Italy', cData[2].recovered, cData[2].deaths,cData[2].todayCases],
+    ['US',  usData.recovered, usData.deaths,usData.todayCases],
+    ['Spain', spData.recovered, spData.deaths,spData.todayCases],
+    ['Italy', iData.recovered, iData.deaths,iData.todayCases],
   ]);
 
   var options = {
@@ -199,5 +230,4 @@ function drawChart() {
 }
 }
 }
-
-
+}}
