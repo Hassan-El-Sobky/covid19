@@ -2,7 +2,7 @@
 
 let usData=[];
 let usRequest=new XMLHttpRequest();
-usRequest.open("GET",'https://corona.lmao.ninja/countries/us')
+usRequest.open("GET",'https://corona.lmao.ninja/v2/countries/us')
 usRequest.send()
 usRequest.onreadystatechange=function(){
               

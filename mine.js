@@ -54,7 +54,7 @@ function wDisplay(){
 (function countriesData(){
 let xRequest=new XMLHttpRequest();
 
-xRequest.open("GET",'https://corona.lmao.ninja/countries')
+xRequest.open("GET",'https://corona.lmao.ninja/v2/countries')
 xRequest.send()
 
 xRequest.onreadystatechange=function(){
@@ -138,7 +138,7 @@ let eData=[]
 
 let eRequest=new XMLHttpRequest();
 
-eRequest.open("GET",'https://corona.lmao.ninja/countries/egypt')
+eRequest.open("GET",'https://corona.lmao.ninja/v2/countries/egypt')
 eRequest.send()
 
 eRequest.onreadystatechange=function(){
@@ -160,7 +160,7 @@ eRequest.onreadystatechange=function(){
 
 let usData=[];
 let usRequest=new XMLHttpRequest();
-usRequest.open("GET",'https://corona.lmao.ninja/countries/us')
+usRequest.open("GET",'https://corona.lmao.ninja/v2/countries/us')
 usRequest.send()
 usRequest.onreadystatechange=function(){
               
@@ -176,7 +176,7 @@ usRequest.onreadystatechange=function(){
 
 let spData=[];
 let spRequest=new XMLHttpRequest();
-spRequest.open("GET",'https://corona.lmao.ninja/countries/spain')
+spRequest.open("GET",'https://corona.lmao.ninja/v2/countries/spain')
 spRequest.send()
 spRequest.onreadystatechange=function(){
               
@@ -191,7 +191,7 @@ spRequest.onreadystatechange=function(){
 
 let iData=[];
 let iRequest=new XMLHttpRequest();
-iRequest.open("GET",'https://corona.lmao.ninja/countries/italy')
+iRequest.open("GET",'https://corona.lmao.ninja/v2/countries/italy')
 iRequest.send()
 iRequest.onreadystatechange=function(){
               

@@ -1,7 +1,7 @@
 
 let EData=[]
 let ERequest=new XMLHttpRequest();
-ERequest.open("GET",'https://corona.lmao.ninja/countries/egypt')
+ERequest.open("GET",'https://corona.lmao.ninja/v2/countries/egypt')
 ERequest.send()
 
 ERequest.onreadystatechange=function(){
